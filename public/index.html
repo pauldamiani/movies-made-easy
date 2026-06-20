@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movies Made Easy</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="title-block">
+          <h1>Movies Made Easy</h1>
+          <p id="context" class="context">Loading sessions…</p>
+        </div>
+        <button id="cinemaBtn" class="chip-btn chip-btn--header" type="button" aria-haspopup="dialog" aria-expanded="false">
+          <span class="chip-btn-icon" aria-hidden="true">📍</span>
+          <span id="cinemaBtnLabel">Cinemas</span>
+        </button>
+      </div>
+      <div class="datebar">
+        <div id="dayStrip" class="day-strip" role="tablist" aria-label="Select date"></div>
+      </div>
+    </header>
+
+    <div id="cinemaModal" class="modal" hidden>
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Select cinemas">
+        <div class="modal-head">
+          <h2>Select cinemas</h2>
+          <button class="modal-close" type="button" data-close aria-label="Close">✕</button>
+        </div>
+        <input id="cinemaSearch" class="cinema-search" type="search" placeholder="Search cinemas…" autocomplete="off" />
+        <div id="cinemaList" class="cinema-list"></div>
+        <div class="modal-foot">
+          <span id="cinemaCount" class="cinema-count"></span>
+          <div class="modal-actions">
+            <button id="cinemaCancel" class="btn" type="button" data-close>Cancel</button>
+            <button id="cinemaApply" class="btn btn-primary" type="button">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="movieModal" class="modal" hidden>
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Filter movies">
+        <div class="modal-head">
+          <h2>Filter movies</h2>
+          <button class="modal-close" type="button" data-close aria-label="Close">✕</button>
+        </div>
+        <input id="movieSearch" class="cinema-search" type="search" placeholder="Search movies…" autocomplete="off" />
+        <div id="movieList" class="cinema-list"></div>
+        <div class="modal-foot">
+          <span id="movieCount" class="cinema-count"></span>
+          <div class="modal-actions">
+            <button id="movieClear" class="btn" type="button">Clear</button>
+            <button id="movieApply" class="btn btn-primary" type="button">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <button id="movieFilterBtn" class="chip-btn" type="button" aria-haspopup="dialog" aria-expanded="false">
+        <span class="chip-btn-icon" aria-hidden="true">🎬</span>
+        <span id="movieFilterLabel">All movies</span>
+      </button>
+      <button id="collapseBtn" class="chip-btn" type="button">
+        <span class="chip-btn-icon" aria-hidden="true">⊟</span>
+        <span id="collapseLabel">Collapse all</span>
+      </button>
+      <div id="typeChips" class="type-chips" role="group" aria-label="Filter by session type"></div>
+    </div>
+
+    <section id="upcoming" class="upcoming" aria-label="Coming up later this week" hidden>
+      <div class="upcoming-head">Coming up later this week</div>
+      <div id="upcomingStrip" class="upcoming-strip"></div>
+    </section>
+
+    <main id="main" class="container">
+      <div id="status" class="status">Loading sessions…</div>
+      <div id="grid" class="grid" hidden></div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

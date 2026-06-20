@@ -1,0 +1,272 @@
+[
+  {
+    "id": 64,
+    "name": "Bondi Junction",
+    "state": "NSW"
+  },
+  {
+    "id": 58,
+    "name": "Burwood",
+    "state": "NSW"
+  },
+  {
+    "id": 65,
+    "name": "Campbelltown",
+    "state": "NSW"
+  },
+  {
+    "id": 53,
+    "name": "Castle Hill",
+    "state": "NSW"
+  },
+  {
+    "id": 36,
+    "name": "Coffs Harbour",
+    "state": "NSW"
+  },
+  {
+    "id": 5,
+    "name": "Drive In Blacktown",
+    "state": "NSW"
+  },
+  {
+    "id": 94,
+    "name": "Ed Square",
+    "state": "NSW"
+  },
+  {
+    "id": 15,
+    "name": "George Street",
+    "state": "NSW"
+  },
+  {
+    "id": 21,
+    "name": "Glendale",
+    "state": "NSW"
+  },
+  {
+    "id": 62,
+    "name": "Hornsby",
+    "state": "NSW"
+  },
+  {
+    "id": 7,
+    "name": "Hurstville",
+    "state": "NSW"
+  },
+  {
+    "id": 96,
+    "name": "IMAX Sydney",
+    "state": "NSW"
+  },
+  {
+    "id": 85,
+    "name": "Kotara",
+    "state": "NSW"
+  },
+  {
+    "id": 19,
+    "name": "Liverpool",
+    "state": "NSW"
+  },
+  {
+    "id": 55,
+    "name": "Macquarie",
+    "state": "NSW"
+  },
+  {
+    "id": 82,
+    "name": "Miranda",
+    "state": "NSW"
+  },
+  {
+    "id": 75,
+    "name": "Moonlight Cinema Sydney",
+    "state": "NSW"
+  },
+  {
+    "id": 66,
+    "name": "Parramatta",
+    "state": "NSW"
+  },
+  {
+    "id": 63,
+    "name": "Shellharbour",
+    "state": "NSW"
+  },
+  {
+    "id": 69,
+    "name": "Top Ryde City",
+    "state": "NSW"
+  },
+  {
+    "id": 9,
+    "name": "Tuggerah",
+    "state": "NSW"
+  },
+  {
+    "id": 43,
+    "name": "Casuarina",
+    "state": "NT"
+  },
+  {
+    "id": 91,
+    "name": "Palmerston",
+    "state": "NT"
+  },
+  {
+    "id": 59,
+    "name": "Brisbane City",
+    "state": "QLD"
+  },
+  {
+    "id": 44,
+    "name": "Cairns Central",
+    "state": "QLD"
+  },
+  {
+    "id": 61,
+    "name": "Cairns Earlville",
+    "state": "QLD"
+  },
+  {
+    "id": 89,
+    "name": "Cairns Smithfield",
+    "state": "QLD"
+  },
+  {
+    "id": 30,
+    "name": "Capalaba",
+    "state": "QLD"
+  },
+  {
+    "id": 28,
+    "name": "Carindale",
+    "state": "QLD"
+  },
+  {
+    "id": 56,
+    "name": "Chermside",
+    "state": "QLD"
+  },
+  {
+    "id": 92,
+    "name": "Coomera",
+    "state": "QLD"
+  },
+  {
+    "id": 48,
+    "name": "Indooroopilly",
+    "state": "QLD"
+  },
+  {
+    "id": 93,
+    "name": "Kawana",
+    "state": "QLD"
+  },
+  {
+    "id": 79,
+    "name": "Loganholme",
+    "state": "QLD"
+  },
+  {
+    "id": 50,
+    "name": "Mackay Mount Pleasant",
+    "state": "QLD"
+  },
+  {
+    "id": 38,
+    "name": "Maroochydore Sunshine Plaza",
+    "state": "QLD"
+  },
+  {
+    "id": 74,
+    "name": "Moonlight Cinema Brisbane",
+    "state": "QLD"
+  },
+  {
+    "id": 49,
+    "name": "Mt Gravatt",
+    "state": "QLD"
+  },
+  {
+    "id": 77,
+    "name": "Noosa",
+    "state": "QLD"
+  },
+  {
+    "id": 86,
+    "name": "North Lakes",
+    "state": "QLD"
+  },
+  {
+    "id": 23,
+    "name": "Pacific Fair",
+    "state": "QLD"
+  },
+  {
+    "id": 34,
+    "name": "Robina",
+    "state": "QLD"
+  },
+  {
+    "id": 47,
+    "name": "Rockhampton North",
+    "state": "QLD"
+  },
+  {
+    "id": 83,
+    "name": "Springfield",
+    "state": "QLD"
+  },
+  {
+    "id": 26,
+    "name": "Strathpine",
+    "state": "QLD"
+  },
+  {
+    "id": 52,
+    "name": "Toowoomba Grand Central",
+    "state": "QLD"
+  },
+  {
+    "id": 37,
+    "name": "Toowoomba Strand",
+    "state": "QLD"
+  },
+  {
+    "id": 81,
+    "name": "Townsville Central",
+    "state": "QLD"
+  },
+  {
+    "id": 22,
+    "name": "Marion",
+    "state": "SA"
+  },
+  {
+    "id": 71,
+    "name": "Moonlight Cinema Adelaide",
+    "state": "SA"
+  },
+  {
+    "id": 73,
+    "name": "Moonlight Cinema Melbourne",
+    "state": "VIC"
+  },
+  {
+    "id": 17,
+    "name": "Innaloo",
+    "state": "WA"
+  },
+  {
+    "id": 72,
+    "name": "Moonlight Cinema Perth",
+    "state": "WA"
+  },
+  {
+    "id": 90,
+    "name": "Whitford",
+    "state": "WA"
+  }
+]

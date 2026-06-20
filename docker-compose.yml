@@ -1,0 +1,16 @@
+services:
+  movies-made-easy:
+    build: .
+    image: movies-made-easy
+    container_name: movies-made-easy
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - CACHE_TTL_MS=60000
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

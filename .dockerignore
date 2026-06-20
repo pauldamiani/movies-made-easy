@@ -1,0 +1,12 @@
+.git
+.gitignore
+.claude
+node_modules
+scratchpad
+**/.DS_Store
+*.log
+Dockerfile
+docker-compose.yml
+README.md
+# Reference-only sample data; the app uses GetSessions.json as its fallback.
+GetNowShowing.json
