@@ -5,7 +5,9 @@ services:
     container_name: movies-made-easy
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      # Host port is configurable (default 3000). Override with HOST_PORT in a
+      # local .env when 3000 is taken — e.g. HOST_PORT=3001.
+      - "${HOST_PORT:-3000}:3000"
     environment:
       - PORT=3000
       - CACHE_TTL_MS=60000

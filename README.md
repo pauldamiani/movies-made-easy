@@ -52,10 +52,11 @@ docker compose up -d --build
 
 ## Configuration
 
-| Env var        | Default | Description                                  |
-| -------------- | ------- | -------------------------------------------- |
-| `PORT`         | `3000`  | Port the server listens on.                  |
-| `CACHE_TTL_MS` | `60000` | How long upstream responses are cached (ms). |
+| Env var        | Default | Description                                            |
+| -------------- | ------- | ------------------------------------------------------ |
+| `PORT`         | `3000`  | Port the server listens on inside the container.       |
+| `CACHE_TTL_MS` | `60000` | How long upstream responses are cached (ms).           |
+| `HOST_PORT`    | `3000`  | Host port published by Compose. Set in `.env` if 3000 is taken (e.g. `HOST_PORT=3001`). |
 
 ## Deploy to the homelab
 
@@ -64,10 +65,13 @@ On the homelab machine (Docker + Compose installed):
 ```bash
 git clone git@github.com:pauldamiani/movies-made-easy.git
 cd movies-made-easy
+# Optional: if host port 3000 is taken, pick another:
+echo "HOST_PORT=3001" > .env
 docker compose up -d --build
 ```
 
-The container now serves on port `3000`. To update after pushing changes:
+The container now serves on the host port (default `3000`, or your `HOST_PORT`).
+To update after pushing changes:
 
 ```bash
 git pull && docker compose up -d --build
@@ -81,7 +85,7 @@ git pull && docker compose up -d --build
 2. **Router** — ensure ports `80`/`443` forward to the Nginx Proxy Manager host.
 3. **Nginx Proxy Manager** — add a Proxy Host:
    - Domain: `movies.slothic.dev`
-   - Forward to: `http://<homelab-ip>:3000` (scheme `http`)
+   - Forward to: `http://<homelab-ip>:<HOST_PORT>` (scheme `http`)
    - Enable **Block Common Exploits** and **Websockets** is not required.
    - SSL tab: request a new Let's Encrypt certificate, force SSL + HTTP/2.
 
