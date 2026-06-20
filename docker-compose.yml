@@ -16,3 +16,18 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+
+  # Optional public exposure via Cloudflare Tunnel — no open ports, hidden home
+  # IP, automatic SSL. Enable with:  docker compose --profile tunnel up -d
+  # Set TUNNEL_TOKEN in .env (from the Cloudflare Zero Trust dashboard). On the
+  # tunnel's Public Hostname, point the service at: http://movies-made-easy:3000
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: movies-cloudflared
+    restart: unless-stopped
+    profiles: ["tunnel"]
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - movies-made-easy

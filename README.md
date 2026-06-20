@@ -77,17 +77,30 @@ To update after pushing changes:
 git pull && docker compose up -d --build
 ```
 
-## Expose publicly (Nginx Proxy Manager + Cloudflare)
+## Expose publicly (Cloudflare Tunnel)
 
-1. **Cloudflare DNS** — add an `A` record for `movies` → your home public IP
-   (or a `CNAME` to your existing dynamic-DNS host). Proxy status as you use for
-   your other services.
-2. **Router** — ensure ports `80`/`443` forward to the Nginx Proxy Manager host.
-3. **Nginx Proxy Manager** — add a Proxy Host:
-   - Domain: `movies.slothic.dev`
-   - Forward to: `http://<homelab-ip>:<HOST_PORT>` (scheme `http`)
-   - Enable **Block Common Exploits** and **Websockets** is not required.
-   - SSL tab: request a new Let's Encrypt certificate, force SSL + HTTP/2.
+No open ports, no exposed home IP, automatic SSL — `cloudflared` makes an
+outbound connection to Cloudflare and routes the public hostname to the app
+over Docker's internal network.
+
+1. **Cloudflare Zero Trust → Networks → Tunnels → Create a tunnel** (Cloudflared
+   connector). Copy the tunnel **token** (the long string after `--token`).
+2. On the homelab, add it to `.env`:
+   ```bash
+   echo "TUNNEL_TOKEN=eyJ...your-token..." >> .env
+   ```
+3. Start the app **with the tunnel profile**:
+   ```bash
+   docker compose --profile tunnel up -d --build
+   ```
+4. Back in the tunnel, add a **Public Hostname**:
+   - Subdomain `movies`, Domain `slothic.dev`
+   - Service: **HTTP** → `movies-made-easy:3000`
+   - Save — Cloudflare auto-creates the proxied DNS record.
+5. Visit **https://movies.slothic.dev**.
+
+> Alternative: front it with Nginx Proxy Manager + an `A` record to your public
+> IP and 80/443 port-forwarding — but that opens inbound ports to your network.
 
 ## Note
 
